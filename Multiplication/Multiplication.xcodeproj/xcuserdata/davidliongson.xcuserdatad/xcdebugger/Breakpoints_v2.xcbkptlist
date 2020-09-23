@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "648E8895-88CB-43E5-BA07-E2A869696D92"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F3E32B6-4BFC-4FEE-841F-9E85FE03756C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Multiplication/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "createQuestions(total:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27BDC407-00D7-438D-91DE-8AB1C209D209"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Multiplication/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "startGame()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27BDC407-00D7-438D-91DE-8AB1C209D209 - bfe03088818c6934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Multiplication.ContentView.startGame() -&gt; ()"
+                  moduleName = "Multiplication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidliongson/Developer/100DaysOfSwiftUI/Multiplication/Multiplication/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "27BDC407-00D7-438D-91DE-8AB1C209D209 - bfe03088818c6934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Multiplication.ContentView.startGame() -&gt; ()"
+                  moduleName = "Multiplication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidliongson/Developer/100DaysOfSwiftUI/Multiplication/Multiplication/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "27BDC407-00D7-438D-91DE-8AB1C209D209 - bfe03088818c6934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Multiplication.ContentView.startGame() -&gt; ()"
+                  moduleName = "Multiplication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidliongson/Developer/100DaysOfSwiftUI/Multiplication/Multiplication/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "27BDC407-00D7-438D-91DE-8AB1C209D209 - bfe03088818c6934"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Multiplication.ContentView.startGame() -&gt; ()"
+                  moduleName = "Multiplication"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidliongson/Developer/100DaysOfSwiftUI/Multiplication/Multiplication/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "142">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
