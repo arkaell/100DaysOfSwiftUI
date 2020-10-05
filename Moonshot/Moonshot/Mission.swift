@@ -28,6 +28,12 @@ struct Mission: Codable, Identifiable {
         "apollo\(id)"
     }
     
+    var crewSummary: String {
+        crew.reduce("") {
+            $0 + $1.name.capitalized + ($1.name != crew.last!.name ? ", " : "")
+        }
+    }
+    
     var formattedLaunchDate: String {
         if let launchDate = launchDate {
             let formatter = DateFormatter()

@@ -11,24 +11,30 @@ struct ContentView: View {
     
     let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
+    
+    @State var toggleDefaultDisplayToCrew = false
+    
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: MissionView(mission: mission, astronauts: astronauts)) {
+                NavigationLink(destination: MissionView(mission: mission, astronauts: astronauts, missions: missions)) {
                     Image(mission.image)
                         .resizable()
-//                        .aspectRatio(contentMode: .fit)
                         .scaledToFit()
                         .frame(width: 44, height: 44)
                     
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
                             .font(.headline)
-                        Text(mission.formattedLaunchDate)
+                        Text(toggleDefaultDisplayToCrew ? mission.crewSummary : mission.formattedLaunchDate)
+                            .font(.caption)
                     }
                 }
             }
             .navigationBarTitle("Moonshot")
+            .navigationBarItems(trailing: Button("Toggle") {
+                self.toggleDefaultDisplayToCrew.toggle()
+            })
         }
     }
 }
