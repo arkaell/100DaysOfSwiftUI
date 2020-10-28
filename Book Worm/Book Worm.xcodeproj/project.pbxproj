@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5508ABAA2549AA0E000E60C6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5508ABA92549AA0E000E60C6 /* DetailView.swift */; };
 		5526AD64254599E000B25E57 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526AD63254599E000B25E57 /* AddBookView.swift */; };
 		5526AD6725459BF400B25E57 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526AD6625459BF400B25E57 /* RatingView.swift */; };
 		5526AD6A25459DCA00B25E57 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526AD6925459DCA00B25E57 /* EmojiRatingView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5508ABA92549AA0E000E60C6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5526AD63254599E000B25E57 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		5526AD6625459BF400B25E57 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		5526AD6925459DCA00B25E57 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
@@ -46,7 +48,6 @@
 		55310C3325459886003A8C66 = {
 			isa = PBXGroup;
 			children = (
-				5526AD6925459DCA00B25E57 /* EmojiRatingView.swift */,
 				55310C3E25459886003A8C66 /* Book Worm */,
 				55310C3D25459886003A8C66 /* Products */,
 			);
@@ -63,9 +64,11 @@
 		55310C3E25459886003A8C66 /* Book Worm */ = {
 			isa = PBXGroup;
 			children = (
+				5526AD6925459DCA00B25E57 /* EmojiRatingView.swift */,
 				55310C3F25459886003A8C66 /* Book_WormApp.swift */,
 				55310C4125459886003A8C66 /* ContentView.swift */,
 				5526AD63254599E000B25E57 /* AddBookView.swift */,
+				5508ABA92549AA0E000E60C6 /* DetailView.swift */,
 				5526AD6625459BF400B25E57 /* RatingView.swift */,
 				55310C4325459887003A8C66 /* Assets.xcassets */,
 				55310C4825459887003A8C66 /* Persistence.swift */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55310C4925459887003A8C66 /* Persistence.swift in Sources */,
+				5508ABAA2549AA0E000E60C6 /* DetailView.swift in Sources */,
 				55310C4C25459887003A8C66 /* Book_Worm.xcdatamodeld in Sources */,
 				5526AD6A25459DCA00B25E57 /* EmojiRatingView.swift in Sources */,
 				55310C4225459886003A8C66 /* ContentView.swift in Sources */,
