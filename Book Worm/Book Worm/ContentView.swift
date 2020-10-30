@@ -25,14 +25,24 @@ struct ContentView: View {
             List {
                 ForEach(books, id: \.self) { book in
                     NavigationLink(destination: DetailView(book: book)) {
-                        EmojiRatingView(rating: book.rating)
-                            .font(.largeTitle)
-                        
                         VStack(alignment: .leading) {
-                            Text(book.title ?? "Unknown Title")
-                                .font(.headline)
-                            Text(book.author ?? "Unknown Author")
-                                .foregroundColor(.secondary)
+                            Text(self.formatDate(book.date))
+                                .font(.caption2)
+                                .padding(2)
+                            
+                            HStack {
+                                EmojiRatingView(rating: book.rating)
+                                    .font(.largeTitle)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(book.title ?? "Unknown Title")
+                                        .font(.headline)
+                                        .foregroundColor(book.rating == 1 ? .red : .black)
+                                    Text(book.author ?? "Unknown Author")
+                                        .foregroundColor(.secondary)
+
+                                }
+                            }
                         }
                     }
                 }
@@ -58,6 +68,19 @@ struct ContentView: View {
         }
         
         try? moc.save()
+    }
+    
+    func formatDate(_ date: Date?) -> String {
+        
+        var output = ""
+        
+        if let date = date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            output = formatter.string(from: date)
+        }
+        
+        return output
     }
 
 }

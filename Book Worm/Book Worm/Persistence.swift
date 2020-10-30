@@ -20,6 +20,7 @@ struct PersistenceController {
             newBook.rating = 5
             newBook.genre = "Fantasy"
             newBook.review = "Great book!"
+            newBook.date = Date()
         }
         do {
             try viewContext.save()
