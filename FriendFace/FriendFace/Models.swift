@@ -28,9 +28,12 @@ class UsersLoader: ObservableObject {
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             
             if let decodedData = try? decoder.decode([User].self, from: data) {
+                
                 DispatchQueue.main.async {
                     self.users = decodedData
                 }
+                
+                
                 
             } else {
                 print("Invalid response from server")
@@ -41,7 +44,7 @@ class UsersLoader: ObservableObject {
 }
 
 struct User: Codable {
-        
+
     var id: String
     var isActive: Bool
     var name: String

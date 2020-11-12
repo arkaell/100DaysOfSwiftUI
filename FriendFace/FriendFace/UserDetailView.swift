@@ -9,14 +9,14 @@ import SwiftUI
 
 struct UserDetailView: View {
     
-    var user: User
-    var users: [User]
+    var user: UserModel
+    var users: [UserModel]
     
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
                 Spacer()
-                Text("Registered on \(formatter.string(from: user.registered))")
+                Text("Registered on \(formatter.string(from: user.wrappedRegistered))")
                     .font(.caption)
                     
                 Spacer()
@@ -26,7 +26,7 @@ struct UserDetailView: View {
             HStack {
                 Image(systemName: "envelope")
                     .foregroundColor(.blue)
-                Text(": \(user.email)")
+                Text(": \(user.wrappedEmail)")
                     .foregroundColor(.blue)
                     .font(.callout)
             }
@@ -45,7 +45,7 @@ struct UserDetailView: View {
             HStack {
                 Image(systemName: "house")
                     .foregroundColor(.blue)
-                Text(": \(user.address)")
+                Text(": \(user.wrappedAddress)")
                     .font(.callout)
 
             }
@@ -55,22 +55,23 @@ struct UserDetailView: View {
                 Image(systemName: "person.3.fill")
                     .foregroundColor(.blue)
                 
-                Text("\(user.friends.count)")
+                Text("\(user.friendsArray.count)")
             }
             .padding([.bottom, .horizontal])
             
             List {
-                ForEach(user.friends, id: \.id) { friend in
+                ForEach(user.friendsArray, id: \.self) { friend in
                     NavigationLink(destination: UserDetailView(user: getUser(for: friend), users: users)) {
-                        Text(friend.name)
-                            .font(.callout)
+                        Text("\(friend.wrappedName)")
                             .foregroundColor(.blue)
+                            .font(.callout)
                     }
                 }
             }
+            
             Spacer()
         }
-        .navigationBarTitle(user.name)
+        .navigationBarTitle(user.wrappedName)
         
     }
     
@@ -80,7 +81,7 @@ struct UserDetailView: View {
         return dateFormatter
     }
     
-    private func getUser(for friend: Friend) -> User {
+    private func getUser(for friend: FriendModel) -> UserModel {
         return users.first(where: { $0.id == friend.id })!
     }
 }

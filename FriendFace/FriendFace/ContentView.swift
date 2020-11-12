@@ -9,14 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
-    @ObservedObject var userData = UsersLoader()
+        
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: UserModel.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) var users: FetchedResults<UserModel>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(userData.users, id: \.id) { user in
-                    NavigationLink(destination: UserDetailView(user: user, users: userData.users)) {
+                ForEach(users, id: \.self) { user in
+                    NavigationLink(destination: UserDetailView(user: user, users: users.sorted(by: { $0.wrappedName < $1.wrappedName }))) {
                         UserRowView(user: user)
                     }
                 }
@@ -25,18 +26,20 @@ struct ContentView: View {
             .navigationTitle("FriendFace")
         }
     }
+    
+
 
 }
 
 struct UserRowView: View {
-    let user: User
+    let user: UserModel
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(user.name)
+                Text(user.wrappedName)
                     .font(.headline)
-                Text(user.email)
+                Text(user.wrappedEmail)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
@@ -45,11 +48,11 @@ struct UserRowView: View {
             
             HStack {
                 
-                Text("\(user.friends.count)")
+                Text("\(user.friendsArray.count)")
                     .font(.headline)
                 Image(systemName: "person.3.fill")
             }
-            .foregroundColor(user.friends.count < 5 ? .gray : .blue)
+            .foregroundColor(user.friendsArray.count < 5 ? .gray : .blue)
         }
     }
 }
