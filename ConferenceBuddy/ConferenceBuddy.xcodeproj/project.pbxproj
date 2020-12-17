@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5502B78E258A21B400BF3344 /* ConferenceBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B78D258A21B400BF3344 /* ConferenceBuddyApp.swift */; };
+		5502B790258A21B400BF3344 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B78F258A21B400BF3344 /* ContentView.swift */; };
+		5502B792258A21B800BF3344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5502B791258A21B800BF3344 /* Assets.xcassets */; };
+		5502B795258A21B800BF3344 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5502B794258A21B800BF3344 /* Preview Assets.xcassets */; };
+		5502B7A4258A324200BF3344 /* BuddiesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7A2258A324200BF3344 /* BuddiesModel.xcdatamodeld */; };
+		5502B7A8258A327500BF3344 /* Buddy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7A6258A327500BF3344 /* Buddy+CoreDataClass.swift */; };
+		5502B7A9258A327500BF3344 /* Buddy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7A7258A327500BF3344 /* Buddy+CoreDataProperties.swift */; };
+		5502B7AC258A32AB00BF3344 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7AB258A32AB00BF3344 /* Persistence.swift */; };
+		5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B2258A37C900BF3344 /* ImagePicker.swift */; };
+		5502B7B7258B7B9400BF3344 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B6258B7B9400BF3344 /* ImageSaver.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5502B78A258A21B400BF3344 /* ConferenceBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5502B78D258A21B400BF3344 /* ConferenceBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBuddyApp.swift; sourceTree = "<group>"; };
+		5502B78F258A21B400BF3344 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5502B791258A21B800BF3344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5502B794258A21B800BF3344 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5502B796258A21B800BF3344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5502B7A3258A324200BF3344 /* BuddiesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuddiesModel.xcdatamodel; sourceTree = "<group>"; };
+		5502B7A6258A327500BF3344 /* Buddy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Buddy+CoreDataClass.swift"; path = "ConferenceBuddy/Buddy+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		5502B7A7258A327500BF3344 /* Buddy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Buddy+CoreDataProperties.swift"; path = "ConferenceBuddy/Buddy+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		5502B7AB258A32AB00BF3344 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		5502B7B2258A37C900BF3344 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5502B7B6258B7B9400BF3344 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5502B787258A21B400BF3344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5502B781258A21B400BF3344 = {
+			isa = PBXGroup;
+			children = (
+				5502B78C258A21B400BF3344 /* ConferenceBuddy */,
+				5502B78B258A21B400BF3344 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5502B78B258A21B400BF3344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5502B78A258A21B400BF3344 /* ConferenceBuddy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5502B78C258A21B400BF3344 /* ConferenceBuddy */ = {
+			isa = PBXGroup;
+			children = (
+				5502B7A1258A322600BF3344 /* Model */,
+				5502B78D258A21B400BF3344 /* ConferenceBuddyApp.swift */,
+				5502B78F258A21B400BF3344 /* ContentView.swift */,
+				5502B791258A21B800BF3344 /* Assets.xcassets */,
+				5502B796258A21B800BF3344 /* Info.plist */,
+				5502B793258A21B800BF3344 /* Preview Content */,
+				5502B7B5258B7B8800BF3344 /* Image Handlers */,
+			);
+			path = ConferenceBuddy;
+			sourceTree = "<group>";
+		};
+		5502B793258A21B800BF3344 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5502B794258A21B800BF3344 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5502B7A1258A322600BF3344 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5502B7A6258A327500BF3344 /* Buddy+CoreDataClass.swift */,
+				5502B7A7258A327500BF3344 /* Buddy+CoreDataProperties.swift */,
+				5502B7A2258A324200BF3344 /* BuddiesModel.xcdatamodeld */,
+				5502B7AB258A32AB00BF3344 /* Persistence.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5502B7B5258B7B8800BF3344 /* Image Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				5502B7B2258A37C900BF3344 /* ImagePicker.swift */,
+				5502B7B6258B7B9400BF3344 /* ImageSaver.swift */,
+			);
+			path = "Image Handlers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5502B789258A21B400BF3344 /* ConferenceBuddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5502B799258A21B800BF3344 /* Build configuration list for PBXNativeTarget "ConferenceBuddy" */;
+			buildPhases = (
+				5502B786258A21B400BF3344 /* Sources */,
+				5502B787258A21B400BF3344 /* Frameworks */,
+				5502B788258A21B400BF3344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConferenceBuddy;
+			productName = ConferenceBuddy;
+			productReference = 5502B78A258A21B400BF3344 /* ConferenceBuddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5502B782258A21B400BF3344 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					5502B789258A21B400BF3344 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 5502B785258A21B400BF3344 /* Build configuration list for PBXProject "ConferenceBuddy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5502B781258A21B400BF3344;
+			productRefGroup = 5502B78B258A21B400BF3344 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5502B789258A21B400BF3344 /* ConferenceBuddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5502B788258A21B400BF3344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502B795258A21B800BF3344 /* Preview Assets.xcassets in Resources */,
+				5502B792258A21B800BF3344 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5502B786258A21B400BF3344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502B7A9258A327500BF3344 /* Buddy+CoreDataProperties.swift in Sources */,
+				5502B7A8258A327500BF3344 /* Buddy+CoreDataClass.swift in Sources */,
+				5502B7A4258A324200BF3344 /* BuddiesModel.xcdatamodeld in Sources */,
+				5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */,
+				5502B7AC258A32AB00BF3344 /* Persistence.swift in Sources */,
+				5502B790258A21B400BF3344 /* ContentView.swift in Sources */,
+				5502B78E258A21B400BF3344 /* ConferenceBuddyApp.swift in Sources */,
+				5502B7B7258B7B9400BF3344 /* ImageSaver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5502B797258A21B800BF3344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5502B798258A21B800BF3344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5502B79A258A21B800BF3344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ConferenceBuddy/Preview Content\"";
+				DEVELOPMENT_TEAM = WMCQK22Q3T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConferenceBuddy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dodilearns.ConferenceBuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5502B79B258A21B800BF3344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ConferenceBuddy/Preview Content\"";
+				DEVELOPMENT_TEAM = WMCQK22Q3T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ConferenceBuddy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dodilearns.ConferenceBuddy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5502B785258A21B400BF3344 /* Build configuration list for PBXProject "ConferenceBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502B797258A21B800BF3344 /* Debug */,
+				5502B798258A21B800BF3344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5502B799258A21B800BF3344 /* Build configuration list for PBXNativeTarget "ConferenceBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502B79A258A21B800BF3344 /* Debug */,
+				5502B79B258A21B800BF3344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5502B7A2258A324200BF3344 /* BuddiesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5502B7A3258A324200BF3344 /* BuddiesModel.xcdatamodel */,
+			);
+			currentVersion = 5502B7A3258A324200BF3344 /* BuddiesModel.xcdatamodel */;
+			path = BuddiesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5502B782258A21B400BF3344 /* Project object */;
+}
