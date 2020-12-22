@@ -2,7 +2,7 @@
 //  Buddy+CoreDataProperties.swift
 //  ConferenceBuddy
 //
-//  Created by David Liongson on 12/16/20.
+//  Created by David Liongson on 12/20/20.
 //
 //
 
@@ -19,13 +19,11 @@ extension Buddy {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var photoID: UUID?
+    @NSManaged public var position: String?
+    @NSManaged public var number: Int16
 
-    
-    
 }
 
 extension Buddy : Identifiable {
 
 }
-
-

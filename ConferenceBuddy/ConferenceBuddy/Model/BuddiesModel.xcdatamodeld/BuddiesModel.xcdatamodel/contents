@@ -3,9 +3,11 @@
     <entity name="Buddy" representedClassName="Buddy" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="photoID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Buddy" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Buddy" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

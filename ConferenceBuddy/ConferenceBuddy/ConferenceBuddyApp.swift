@@ -14,7 +14,7 @@ struct ConferenceBuddyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BuddyListView()
                 .environment(\.managedObjectContext, persistence.container.viewContext)
         }
     }
