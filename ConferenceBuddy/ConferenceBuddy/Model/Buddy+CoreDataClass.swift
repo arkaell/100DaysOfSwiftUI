@@ -2,7 +2,7 @@
 //  Buddy+CoreDataClass.swift
 //  ConferenceBuddy
 //
-//  Created by David Liongson on 12/20/20.
+//  Created by David Liongson on 12/23/20.
 //
 //
 

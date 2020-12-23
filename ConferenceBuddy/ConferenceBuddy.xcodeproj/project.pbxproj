@@ -16,8 +16,9 @@
 		5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B2258A37C900BF3344 /* ImagePicker.swift */; };
 		5502B7B7258B7B9400BF3344 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B6258B7B9400BF3344 /* ImageSaver.swift */; };
 		55A229C8258F71F90001B19B /* BuddyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A229C7258F71F90001B19B /* BuddyListView.swift */; };
-		55A229CC258F73180001B19B /* Buddy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A229CA258F73180001B19B /* Buddy+CoreDataClass.swift */; };
-		55A229CD258F73180001B19B /* Buddy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A229CB258F73180001B19B /* Buddy+CoreDataProperties.swift */; };
+		55DC71472592F64A00AA5DD5 /* BuddyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */; };
+		55DC714D25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC714B25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift */; };
+		55DC714E25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC714C25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift */; };
 		55ED82A3258CA76800F9A92A /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ED82A2258CA76800F9A92A /* Color+Custom.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +34,9 @@
 		5502B7B2258A37C900BF3344 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5502B7B6258B7B9400BF3344 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		55A229C7258F71F90001B19B /* BuddyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyListView.swift; sourceTree = "<group>"; };
-		55A229CA258F73180001B19B /* Buddy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buddy+CoreDataClass.swift"; sourceTree = "<group>"; };
-		55A229CB258F73180001B19B /* Buddy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buddy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyDetailView.swift; sourceTree = "<group>"; };
+		55DC714B25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buddy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55DC714C25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buddy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		55ED82A2258CA76800F9A92A /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Color+Custom.swift"; path = "ConferenceBuddy/Image Handlers/Color+Custom.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -90,8 +92,8 @@
 		5502B7A1258A322600BF3344 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				55A229CA258F73180001B19B /* Buddy+CoreDataClass.swift */,
-				55A229CB258F73180001B19B /* Buddy+CoreDataProperties.swift */,
+				55DC714B25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift */,
+				55DC714C25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift */,
 				55ED82A2258CA76800F9A92A /* Color+Custom.swift */,
 				5502B7A2258A324200BF3344 /* BuddiesModel.xcdatamodeld */,
 				5502B7AB258A32AB00BF3344 /* Persistence.swift */,
@@ -113,6 +115,7 @@
 			children = (
 				55A229C7258F71F90001B19B /* BuddyListView.swift */,
 				5502B78F258A21B400BF3344 /* AddBuddyView.swift */,
+				55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,12 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5502B7A4258A324200BF3344 /* BuddiesModel.xcdatamodeld in Sources */,
-				55A229CC258F73180001B19B /* Buddy+CoreDataClass.swift in Sources */,
-				55A229CD258F73180001B19B /* Buddy+CoreDataProperties.swift in Sources */,
 				55A229C8258F71F90001B19B /* BuddyListView.swift in Sources */,
+				55DC71472592F64A00AA5DD5 /* BuddyDetailView.swift in Sources */,
 				5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */,
 				55ED82A3258CA76800F9A92A /* Color+Custom.swift in Sources */,
 				5502B7AC258A32AB00BF3344 /* Persistence.swift in Sources */,
+				55DC714D25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift in Sources */,
+				55DC714E25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift in Sources */,
 				5502B790258A21B400BF3344 /* AddBuddyView.swift in Sources */,
 				5502B78E258A21B400BF3344 /* ConferenceBuddyApp.swift in Sources */,
 				5502B7B7258B7B9400BF3344 /* ImageSaver.swift in Sources */,

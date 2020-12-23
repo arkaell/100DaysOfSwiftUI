@@ -21,7 +21,7 @@ struct BuddyListView: View {
         NavigationView {
             List {
                 ForEach(buddies, id: \.self) { buddy in
-                    NavigationLink(destination: Text("WIP")) {
+                    NavigationLink(destination: BuddyDetailView(buddy: buddy)) {
                         HStack {
                             ImageThumbNailView(photoID: buddy.photoID)
                                 .scaledToFit()
@@ -30,14 +30,14 @@ struct BuddyListView: View {
                                 
                             VStack {
                                 HStack {
-                                    Text(buddy.name ?? "Unknown Buddy")
+                                    Text(buddy.name ?? "New England Patriot")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                     Spacer()
                                 }
                                     
                                 HStack {
-                                    Text("\(buddy.number) - \(buddy.position ?? "Unknown Position") ")
+                                    Text("\(buddy.position ?? "Player") ")
                                         .font(.caption)
                                     Spacer()
                                 }

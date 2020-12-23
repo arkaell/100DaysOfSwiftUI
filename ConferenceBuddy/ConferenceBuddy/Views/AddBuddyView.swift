@@ -12,43 +12,35 @@ struct AddBuddyView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var image: Image?
+    @State private var image: Image = Image(systemName: "person.fill.viewfinder")
     @State private var inputImage: UIImage?
     @State private var name: String = ""
     @State private var position: String = ""
-    @State private var number: String = ""
-    
-    @State private var showSuccessAlert = false
+    @State private var showingImagePicker = false
         
     var body: some View {
         NavigationView {
             ZStack {
                 Form {
                     Section {
-                        if let image = image {
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 300, height: 300)
-                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                        } else {
-                            Image(systemName: "questionmark.square.dashed")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 300, height: 300)
-                                .opacity(0.07)
-                                .padding([.vertical])
-                        }
-                        
-                        if image != nil {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                            .foregroundColor(.patsNavy)
+                            .opacity( inputImage != nil ? 1.0 : 0.15)
+                            .onTapGesture {
+                                self.showingImagePicker = true
+                            }
+
+                        if inputImage != nil {
                             TextField("Enter player name", text: self.$name)
                                 .padding()
                             TextField("Enter position", text: self.$position)
                                 .padding()
-                            TextField("Enter number", text: self.$number)
-                                .padding()
                         } else {
-                            Text("Use the camera or select a photo from the Photos library")
+                            Text("Tap to select a photo from the Photos library")
                                 .multilineTextAlignment(.center)
                                 .font(.headline)
                                 .foregroundColor(Color.patsNavy)
@@ -56,17 +48,25 @@ struct AddBuddyView: View {
                     }
                 }
                 
-                AddPhotoView(inputImage: self.$inputImage, image: self.$image)
             }
             .navigationBarTitle("Pats Buddy", displayMode: .inline)
             .navigationBarItems(
-                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, position: self.$position, number: self.$number, dismissAction: dismissView)
+                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, position: self.$position, dismissAction: dismissView)
                     .environment(\.managedObjectContext, moc))
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
+            }
         }
     }
     
     func dismissView() {
         self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    func loadImage() {
+        if let inputImage = self.inputImage {
+            image = Image(uiImage: inputImage)
+        }
     }
 }
 
@@ -76,7 +76,6 @@ struct SaveButton: View {
     @Binding var inputImage: UIImage?
     @Binding var name: String
     @Binding var position: String
-    @Binding var number: String
 
     let dismissAction: () -> Void
     
@@ -90,7 +89,6 @@ struct SaveButton: View {
             buddy.id = UUID()
             buddy.name = self.name
             buddy.position = self.position
-            buddy.number = Int16(self.number) ?? 0
             buddy.photoID = UUID()
             
             if moc.hasChanges {
@@ -126,34 +124,6 @@ struct SaveButton: View {
         }
     }
     
-}
- 
-struct AddPhotoView: View {
-    
-    @State private var showingImagePicker = false
-    
-    @Binding var inputImage: UIImage?
-    @Binding var image: Image?
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            
-            HStack {
-                CameraButton()
-                PhotosButton(showingImagePicker: self.$showingImagePicker)
-            }
-        }
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
-        }
-    }
-    
-    func loadImage() {
-        if let inputImage = self.inputImage {
-            image = Image(uiImage: inputImage)
-        }
-    }
 }
 
 struct CameraButton: View {
