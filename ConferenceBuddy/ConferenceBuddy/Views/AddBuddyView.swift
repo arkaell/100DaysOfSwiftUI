@@ -6,57 +6,63 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct AddBuddyView: View {
-        
+    
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     
     @State private var image: Image = Image(systemName: "person.fill.viewfinder")
     @State private var inputImage: UIImage?
     @State private var name: String = ""
-    @State private var position: String = ""
+    @State private var location: CLLocationCoordinate2D?
     @State private var showingImagePicker = false
-        
+    
+    let locationFetcher = LocationFetcher()
+    
     var body: some View {
         NavigationView {
-            ZStack {
-                Form {
-                    Section {
+            Form {
+                Section {
+                    ZStack(alignment: .center) {
                         image
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 300)
+                            .scaledToFill()
+                            .frame(width: 300, height: 300, alignment: .topLeading)
                             .clipShape(RoundedRectangle(cornerRadius: 10.0))
                             .foregroundColor(.patsNavy)
-                            .opacity( inputImage != nil ? 1.0 : 0.15)
-                            .onTapGesture {
-                                self.showingImagePicker = true
-                            }
-
-                        if inputImage != nil {
-                            TextField("Enter player name", text: self.$name)
-                                .padding()
-                            TextField("Enter position", text: self.$position)
-                                .padding()
-                        } else {
+                            .opacity( inputImage != nil ? 1.0 : 0.055)
+                             
+                        
+                        if(inputImage == nil) {
                             Text("Tap to select a photo from the Photos library")
+                                .frame(width: 200, height: 200, alignment: .center)
                                 .multilineTextAlignment(.center)
                                 .font(.headline)
                                 .foregroundColor(Color.patsNavy)
                         }
                     }
+                    .onTapGesture {
+                        self.showingImagePicker = true
+                    }  
                 }
                 
+                Section {
+                    TextField("Enter buddy name", text: self.$name)
+                        .foregroundColor(.patsNavy)
+                }
             }
-            .navigationBarTitle("Pats Buddy", displayMode: .inline)
+            .padding()
+            .navigationBarTitle("Conference Buddy", displayMode: .inline)
             .navigationBarItems(
-                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, position: self.$position, dismissAction: dismissView)
+                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, dismissAction: dismissView)
                     .environment(\.managedObjectContext, moc))
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: self.$inputImage)
             }
         }
+        
     }
     
     func dismissView() {
@@ -66,6 +72,7 @@ struct AddBuddyView: View {
     func loadImage() {
         if let inputImage = self.inputImage {
             image = Image(uiImage: inputImage)
+            self.locationFetcher.start()
         }
     }
 }
@@ -75,7 +82,7 @@ struct SaveButton: View {
     
     @Binding var inputImage: UIImage?
     @Binding var name: String
-    @Binding var position: String
+//    @Binding var location: CLLocationCoordinate2D
 
     let dismissAction: () -> Void
     
@@ -88,7 +95,6 @@ struct SaveButton: View {
             let buddy = Buddy(context: moc)
             buddy.id = UUID()
             buddy.name = self.name
-            buddy.position = self.position
             buddy.photoID = UUID()
             
             if moc.hasChanges {

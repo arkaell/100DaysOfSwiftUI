@@ -19,7 +19,6 @@ extension Buddy {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var photoID: UUID?
-    @NSManaged public var position: String?
 
 }
 

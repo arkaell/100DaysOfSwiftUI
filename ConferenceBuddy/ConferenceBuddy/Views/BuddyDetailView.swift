@@ -20,35 +20,25 @@ struct BuddyDetailView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottomTrailing) {
+            ZStack(alignment: .bottom) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(minWidth: 300, minHeight: 300)
+                    .frame(alignment: .topLeading)
+                    .ignoresSafeArea(.keyboard, edges: [.bottom, .horizontal])
+                    .offset(x: 0, y: 25.0)
+                
+                Text(buddy.name ?? "Buddy")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.patsNavy.opacity(0.85))
                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                
-//                testImage
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(minWidth: 300, minHeight: 300)
-//                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                
-                VStack {
-                    Text(buddy.name ?? "Unknown Player")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-
-                    Text(buddy.position ?? "Player")
-                        .font(.headline)
-                }
-                .foregroundColor(.white)
-                .padding(8)
-                .background(Color.patsNavy.opacity(0.85))
-                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                .offset(x: -10.0, y: -10.0)
             }
-            .frame(minWidth: 300, minHeight: 300)
-            .padding()
+            
+            Text("Map View Goes Here")
+            
             Spacer()
         }
        

@@ -24,25 +24,17 @@ struct BuddyListView: View {
                     NavigationLink(destination: BuddyDetailView(buddy: buddy)) {
                         HStack {
                             ImageThumbNailView(photoID: buddy.photoID)
-                                .scaledToFit()
-                                .frame(width: 80, height: 80)
+                                .scaledToFill()
+                                .frame(width: 80, height: 80, alignment: .topLeading)
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                                
-                            VStack {
-                                HStack {
-                                    Text(buddy.name ?? "New England Patriot")
-                                        .font(.headline)
-                                        .fontWeight(.bold)
-                                    Spacer()
-                                }
-                                    
-                                HStack {
-                                    Text("\(buddy.position ?? "Player") ")
-                                        .font(.caption)
-                                    Spacer()
-                                }
-                            }
-                            .foregroundColor(.patsNavy)
+
+                            Text(buddy.name ?? "Buddy")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.patsNavy)
+
+                            Spacer()
+                            
                         }
                     }
                 }
@@ -59,8 +51,6 @@ struct BuddyListView: View {
     private func saveData() {
         print("Saving Data")
     }
-    
-    
 }
 
 struct ImageThumbNailView: View {
