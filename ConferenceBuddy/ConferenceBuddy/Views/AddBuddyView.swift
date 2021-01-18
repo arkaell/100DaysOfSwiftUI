@@ -16,53 +16,61 @@ struct AddBuddyView: View {
     @State private var image: Image = Image(systemName: "person.fill.viewfinder")
     @State private var inputImage: UIImage?
     @State private var name: String = ""
-    @State private var location: CLLocationCoordinate2D?
+
     @State private var showingImagePicker = false
+    @State private var isLocationFetcherStarted = false
+    @State private var coordinate: CLLocationCoordinate2D?
     
     let locationFetcher = LocationFetcher()
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    ZStack(alignment: .center) {
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 300, height: 300, alignment: .topLeading)
-                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                            .foregroundColor(.patsNavy)
-                            .opacity( inputImage != nil ? 1.0 : 0.055)
-                             
-                        
-                        if(inputImage == nil) {
-                            Text("Tap to select a photo from the Photos library")
-                                .frame(width: 200, height: 200, alignment: .center)
-                                .multilineTextAlignment(.center)
-                                .font(.headline)
-                                .foregroundColor(Color.patsNavy)
-                        }
-                    }
+            
+            VStack(alignment: .center) {
+                
+                BuddyPhotoView(image: $image, inputImage: $inputImage)
                     .onTapGesture {
                         self.showingImagePicker = true
-                    }  
-                }
+                    }
                 
-                Section {
-                    TextField("Enter buddy name", text: self.$name)
+                HStack {
+                    Label("Name", systemImage: "person")
+                    TextField("Patriots player", text: self.$name)
                         .foregroundColor(.patsNavy)
                 }
+                .padding()
+                
+                Button("Click to start saving location") {
+                    if let newCoordinate = self.locationFetcher.lastKnownLocation {
+                        self.coordinate = newCoordinate
+                        print("location is \(self.coordinate!)")
+                    } else {
+                        print("location is unknown")
+                    }
+                }
+                .padding()
+                .background(Color.patsNavy)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .font(.headline)
+                .foregroundColor(.white)
+                
+                Spacer()
             }
             .padding()
             .navigationBarTitle("Conference Buddy", displayMode: .inline)
             .navigationBarItems(
-                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, dismissAction: dismissView)
+                trailing: SaveButton(inputImage: self.$inputImage, name: self.$name, coordinate: self.coordinate, dismissAction: dismissView)
                     .environment(\.managedObjectContext, moc))
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: self.$inputImage)
             }
         }
         
+    }
+    
+    init() {
+        self.locationFetcher.start()
+
     }
     
     func dismissView() {
@@ -72,7 +80,6 @@ struct AddBuddyView: View {
     func loadImage() {
         if let inputImage = self.inputImage {
             image = Image(uiImage: inputImage)
-            self.locationFetcher.start()
         }
     }
 }
@@ -82,7 +89,7 @@ struct SaveButton: View {
     
     @Binding var inputImage: UIImage?
     @Binding var name: String
-//    @Binding var location: CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D?
 
     let dismissAction: () -> Void
     
@@ -96,11 +103,20 @@ struct SaveButton: View {
             buddy.id = UUID()
             buddy.name = self.name
             buddy.photoID = UUID()
+            buddy.locationID = nil
+            print("Saving Coordinate \(coordinate)")
+            if coordinate != nil {
+                buddy.locationID = UUID()
+            }
             
             if moc.hasChanges {
                 do {
                     try moc.save()
                     saveData(inputImage: inputImage, id: buddy.photoID!)
+                    if let coordinate = coordinate {
+                        saveLocation(coordinate: coordinate, id: buddy.locationID!)
+                    }
+                    
                     
                 } catch(let error as NSError) {
                     fatalError("Error saving context: \(error), \(error.userInfo)")
@@ -130,6 +146,18 @@ struct SaveButton: View {
         }
     }
     
+    private func saveLocation(coordinate: CLLocationCoordinate2D, id: UUID) {
+        do {
+            let newLocation = CodableMKPointAnnotation()
+            newLocation.coordinate = coordinate
+            let filename = getDocumentsDirectory().appendingPathComponent(id.uuidString)
+            let data = try JSONEncoder().encode(newLocation)
+            try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+            print("save location OK")
+        } catch {
+            print("unable to save location")
+        }
+    }
 }
 
 struct CameraButton: View {
@@ -173,5 +201,33 @@ struct PhotosButton: View {
 struct AddBuddyView_Previews: PreviewProvider {
     static var previews: some View {
         AddBuddyView()
+    }
+}
+
+struct BuddyPhotoView: View {
+    
+    @Binding var image: Image
+    @Binding var inputImage: UIImage?
+    
+    var body: some View {
+        ZStack(alignment: .center) {
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(minWidth: 300, minHeight: 300, alignment: .center)
+                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                .foregroundColor(.patsNavy)
+                .opacity(inputImage != nil ? 1.0 : 0.055)
+                .padding()
+            
+            
+            if(inputImage == nil) {
+                Text("Tap to select a photo from the Photos library")
+                    .frame(width: 200, height: 200, alignment: .center)
+                    .multilineTextAlignment(.center)
+                    .font(.headline)
+                    .foregroundColor(Color.patsNavy)
+            }
+        }
     }
 }

@@ -49,7 +49,7 @@ struct BuddyListView: View {
     }
     
     private func saveData() {
-        print("Saving Data")
+//        print("Saving Data")
     }
 }
 

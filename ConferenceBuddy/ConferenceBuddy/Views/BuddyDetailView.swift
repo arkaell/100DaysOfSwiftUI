@@ -18,29 +18,60 @@ struct BuddyDetailView: View {
         return UIImage(contentsOfFile: filename.path)!
     }
     
-    var body: some View {
-        VStack {
-            ZStack(alignment: .bottom) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(alignment: .topLeading)
-                    .ignoresSafeArea(.keyboard, edges: [.bottom, .horizontal])
-                    .offset(x: 0, y: 25.0)
-                
-                Text(buddy.name ?? "Buddy")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Color.patsNavy.opacity(0.85))
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
+    private var annotation: CodableMKPointAnnotation? {
+        
+        if let id = buddy.locationID {
+            print("loading location")
+            let filename = getDocumentsDirectory().appendingPathComponent(id.uuidString)
+            do {
+                let data = try Data(contentsOf: filename)
+                let decodedAnnotation = try JSONDecoder().decode(CodableMKPointAnnotation.self, from: data)
+                print("\(decodedAnnotation.coordinate)")
+                return decodedAnnotation
+            } catch {
+                print("Cannot load location")
+                return nil
             }
             
-            Text("Map View Goes Here")
-            
-            Spacer()
+        } else {
+            print("no location")
+
+            return nil
         }
+    }
+    
+    var body: some View {
+        Image(uiImage: uiImage)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.bottom)
+            .overlay(
+                VStack() {
+                    Text(buddy.name ?? "Player")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.patsNavy.opacity(0.8))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                    if annotation != nil {
+                        MapView(centerCoordinate: annotation!.coordinate, annotations: [annotation!])
+                            .frame(width: 300, height: 180, alignment: .center)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .padding()
+                    }
+                }
+                .padding(),
+                alignment: .bottom
+            )
+            
+//
+            
+            
+            
+
+            
        
     }
     

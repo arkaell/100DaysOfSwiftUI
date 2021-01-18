@@ -15,6 +15,8 @@
 		5502B7AC258A32AB00BF3344 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7AB258A32AB00BF3344 /* Persistence.swift */; };
 		5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B2258A37C900BF3344 /* ImagePicker.swift */; };
 		5502B7B7258B7B9400BF3344 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502B7B6258B7B9400BF3344 /* ImageSaver.swift */; };
+		5523F1C125B5D51400E41358 /* MKPointAnnotation+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523F1C025B5D51400E41358 /* MKPointAnnotation+Codable.swift */; };
+		5523F1C425B5D96F00E41358 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523F1C325B5D96F00E41358 /* MapView.swift */; };
 		55A229C8258F71F90001B19B /* BuddyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A229C7258F71F90001B19B /* BuddyListView.swift */; };
 		55CFE971259B21A700716470 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CFE970259B21A700716470 /* LocationFetcher.swift */; };
 		55DC71472592F64A00AA5DD5 /* BuddyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */; };
@@ -34,6 +36,8 @@
 		5502B7AB258A32AB00BF3344 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5502B7B2258A37C900BF3344 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5502B7B6258B7B9400BF3344 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		5523F1C025B5D51400E41358 /* MKPointAnnotation+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation+Codable.swift"; sourceTree = "<group>"; };
+		5523F1C325B5D96F00E41358 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		55A229C7258F71F90001B19B /* BuddyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyListView.swift; sourceTree = "<group>"; };
 		55CFE970259B21A700716470 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyDetailView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				5502B7A2258A324200BF3344 /* BuddiesModel.xcdatamodeld */,
 				5502B7AB258A32AB00BF3344 /* Persistence.swift */,
 				55CFE970259B21A700716470 /* LocationFetcher.swift */,
+				5523F1C025B5D51400E41358 /* MKPointAnnotation+Codable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				55A229C7258F71F90001B19B /* BuddyListView.swift */,
 				5502B78F258A21B400BF3344 /* AddBuddyView.swift */,
 				55DC71462592F64A00AA5DD5 /* BuddyDetailView.swift */,
+				5523F1C325B5D96F00E41358 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,12 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5523F1C125B5D51400E41358 /* MKPointAnnotation+Codable.swift in Sources */,
 				5502B7A4258A324200BF3344 /* BuddiesModel.xcdatamodeld in Sources */,
 				55A229C8258F71F90001B19B /* BuddyListView.swift in Sources */,
 				55CFE971259B21A700716470 /* LocationFetcher.swift in Sources */,
 				55DC71472592F64A00AA5DD5 /* BuddyDetailView.swift in Sources */,
 				5502B7B3258A37C900BF3344 /* ImagePicker.swift in Sources */,
 				55ED82A3258CA76800F9A92A /* Color+Custom.swift in Sources */,
+				5523F1C425B5D96F00E41358 /* MapView.swift in Sources */,
 				5502B7AC258A32AB00BF3344 /* Persistence.swift in Sources */,
 				55DC714D25930ADE00AA5DD5 /* Buddy+CoreDataClass.swift in Sources */,
 				55DC714E25930ADE00AA5DD5 /* Buddy+CoreDataProperties.swift in Sources */,
