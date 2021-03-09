@@ -9,54 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let user = User()
-    
-    @State private var selectedTab = "first"
-    
+    var prospects = Prospects()
+        
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Text("Tab 1")
-                .onTapGesture {
-                    self.selectedTab = "second"
-                }
+        TabView {
+            ProspectsView(filter: .none)
                 .tabItem {
-                    Image(systemName: "star")
-                    Text("One")
+                    Image(systemName: "person.3")
+                    Text("Everyone")
                 }
-                .tag("first")
             
-            Text("Tab 2")
+            ProspectsView(filter: .contacted)
                 .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Two")
+                    Image(systemName: "checkmark.circle.fill")
+                    Text("Contacted")
                 }
-                .tag("second")
+            
+            ProspectsView(filter: .uncontacted)
+                .tabItem {
+                    Image(systemName: "questionmark.diamond")
+                    Text("Uncontacted")
+                }
+            
+            MeView()
+                .tabItem {
+                    Image(systemName: "person.crop.square")
+                    Text("Me")
+                }
         }
+        .environmentObject(prospects)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-class User: ObservableObject {
-    @Published var name = "Taylor Swift"
-}
-
-struct EditView: View {
-    @EnvironmentObject var user: User
-    
-    var body: some View {
-        TextField("Name", text: $user.name)
-    }
-}
-
-struct DisplayView: View {
-    @EnvironmentObject var user: User
-    
-    var body: some View {
-        Text(user.name)
     }
 }
