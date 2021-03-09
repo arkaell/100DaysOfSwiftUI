@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55A628D725F49FCB00758415 /* Roll+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A628D525F49FCB00758415 /* Roll+CoreDataClass.swift */; };
+		55A628D825F49FCB00758415 /* Roll+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A628D625F49FCB00758415 /* Roll+CoreDataProperties.swift */; };
+		55BFC49C25E34AB0000F7F24 /* Slice_and_DiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFC49B25E34AB0000F7F24 /* Slice_and_DiceApp.swift */; };
+		55BFC49E25E34AB0000F7F24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFC49D25E34AB0000F7F24 /* ContentView.swift */; };
+		55BFC4A025E34AB1000F7F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BFC49F25E34AB1000F7F24 /* Assets.xcassets */; };
+		55BFC4A325E34AB1000F7F24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BFC4A225E34AB1000F7F24 /* Preview Assets.xcassets */; };
+		55DF960A25F0ABE0005850BC /* SliceDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55DF960825F0ABE0005850BC /* SliceDice.xcdatamodeld */; };
+		55DF961625F0AE8F005850BC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DF961525F0AE8F005850BC /* CoreDataStack.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55A628D525F49FCB00758415 /* Roll+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55A628D625F49FCB00758415 /* Roll+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Roll+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		55BFC49825E34AB0000F7F24 /* Slice and Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slice and Dice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BFC49B25E34AB0000F7F24 /* Slice_and_DiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slice_and_DiceApp.swift; sourceTree = "<group>"; };
+		55BFC49D25E34AB0000F7F24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55BFC49F25E34AB1000F7F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55BFC4A225E34AB1000F7F24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55BFC4A425E34AB1000F7F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55DF960925F0ABE0005850BC /* SliceDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SliceDice.xcdatamodel; sourceTree = "<group>"; };
+		55DF961525F0AE8F005850BC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55BFC49525E34AB0000F7F24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55BFC48F25E34AB0000F7F24 = {
+			isa = PBXGroup;
+			children = (
+				55BFC49A25E34AB0000F7F24 /* Slice and Dice */,
+				55BFC49925E34AB0000F7F24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55BFC49925E34AB0000F7F24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55BFC49825E34AB0000F7F24 /* Slice and Dice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55BFC49A25E34AB0000F7F24 /* Slice and Dice */ = {
+			isa = PBXGroup;
+			children = (
+				55DF961C25F0B04B005850BC /* Views */,
+				55DF960725F0ABCD005850BC /* Model */,
+				55BFC49B25E34AB0000F7F24 /* Slice_and_DiceApp.swift */,
+				55BFC49F25E34AB1000F7F24 /* Assets.xcassets */,
+				55BFC4A425E34AB1000F7F24 /* Info.plist */,
+				55BFC4A125E34AB1000F7F24 /* Preview Content */,
+			);
+			path = "Slice and Dice";
+			sourceTree = "<group>";
+		};
+		55BFC4A125E34AB1000F7F24 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				55BFC4A225E34AB1000F7F24 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55DF960725F0ABCD005850BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55A628D525F49FCB00758415 /* Roll+CoreDataClass.swift */,
+				55A628D625F49FCB00758415 /* Roll+CoreDataProperties.swift */,
+				55DF960825F0ABE0005850BC /* SliceDice.xcdatamodeld */,
+				55DF961525F0AE8F005850BC /* CoreDataStack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55DF961C25F0B04B005850BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55BFC49D25E34AB0000F7F24 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55BFC49725E34AB0000F7F24 /* Slice and Dice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55BFC4A725E34AB1000F7F24 /* Build configuration list for PBXNativeTarget "Slice and Dice" */;
+			buildPhases = (
+				55BFC49425E34AB0000F7F24 /* Sources */,
+				55BFC49525E34AB0000F7F24 /* Frameworks */,
+				55BFC49625E34AB0000F7F24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Slice and Dice";
+			productName = "Slice and Dice";
+			productReference = 55BFC49825E34AB0000F7F24 /* Slice and Dice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55BFC49025E34AB0000F7F24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					55BFC49725E34AB0000F7F24 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 55BFC49325E34AB0000F7F24 /* Build configuration list for PBXProject "Slice and Dice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55BFC48F25E34AB0000F7F24;
+			productRefGroup = 55BFC49925E34AB0000F7F24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55BFC49725E34AB0000F7F24 /* Slice and Dice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55BFC49625E34AB0000F7F24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BFC4A325E34AB1000F7F24 /* Preview Assets.xcassets in Resources */,
+				55BFC4A025E34AB1000F7F24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55BFC49425E34AB0000F7F24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BFC49E25E34AB0000F7F24 /* ContentView.swift in Sources */,
+				55A628D725F49FCB00758415 /* Roll+CoreDataClass.swift in Sources */,
+				55BFC49C25E34AB0000F7F24 /* Slice_and_DiceApp.swift in Sources */,
+				55DF960A25F0ABE0005850BC /* SliceDice.xcdatamodeld in Sources */,
+				55A628D825F49FCB00758415 /* Roll+CoreDataProperties.swift in Sources */,
+				55DF961625F0AE8F005850BC /* CoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55BFC4A525E34AB1000F7F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55BFC4A625E34AB1000F7F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55BFC4A825E34AB1000F7F24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Slice and Dice/Preview Content\"";
+				DEVELOPMENT_TEAM = WMCQK22Q3T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Slice and Dice/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dodilearns.Slice-and-Dice";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		55BFC4A925E34AB1000F7F24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Slice and Dice/Preview Content\"";
+				DEVELOPMENT_TEAM = WMCQK22Q3T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Slice and Dice/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dodilearns.Slice-and-Dice";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55BFC49325E34AB0000F7F24 /* Build configuration list for PBXProject "Slice and Dice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55BFC4A525E34AB1000F7F24 /* Debug */,
+				55BFC4A625E34AB1000F7F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55BFC4A725E34AB1000F7F24 /* Build configuration list for PBXNativeTarget "Slice and Dice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55BFC4A825E34AB1000F7F24 /* Debug */,
+				55BFC4A925E34AB1000F7F24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55DF960825F0ABE0005850BC /* SliceDice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55DF960925F0ABE0005850BC /* SliceDice.xcdatamodel */,
+			);
+			currentVersion = 55DF960925F0ABE0005850BC /* SliceDice.xcdatamodel */;
+			path = SliceDice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 55BFC49025E34AB0000F7F24 /* Project object */;
+}
