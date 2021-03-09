@@ -30,11 +30,16 @@ struct ContentView: View {
                             .font(.caption)
                     }
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibility(label: Text("\(mission.displayName), \(toggleDefaultDisplayToCrew ? mission.crewSummary : mission.formattedLaunchDate)"))
+                .accessibility(hint: Text("Tap to view the \(mission.displayName) mission details"))
             }
             .navigationBarTitle("Moonshot")
             .navigationBarItems(trailing: Button("Toggle") {
                 self.toggleDefaultDisplayToCrew.toggle()
-            })
+            }
+            .accessibility(label: Text("Toggle list to show summary or launch date"))
+            )
         }
     }
 }

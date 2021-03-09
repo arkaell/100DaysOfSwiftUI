@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct MissionView: View {
-    
     let mission: Mission
+    
+    let astronauts: [CrewMember]
+    
+    let missions: [Mission]
     
     struct CrewMember {
         let role: String
         let astronaut: Astronaut
     }
     
-    let astronauts: [CrewMember]
-    let missions: [Mission]
-    
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
+                    GeometryReader { geo in
+                        Image(self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: geometry.size.width)
+                            .scaleEffect(calculateScale(geo, geometry))
+                            .accessibility(label: Text("\(mission.displayName)"))
+                    }
+                    .layoutPriority(1)
                     
                     Text("Launch date: \(self.mission.formattedLaunchDate)")
                                         
@@ -35,7 +39,7 @@ struct MissionView: View {
                         .padding()
                         .layoutPriority(1)
                     
-                    ForEach(self.astronauts, id:\.role) { crewMember in
+                    ForEach(astronauts, id:\.role) { crewMember in
                         NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: missions)) {
                             HStack {
                                 Image(crewMember.astronaut.id)
@@ -43,6 +47,8 @@ struct MissionView: View {
                                     .frame(width: 83, height: 60)
                                     .clipShape(Capsule())
                                     .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+                                    .accessibility(label: Text("\(crewMember.astronaut.name)"))
+                                    .accessibility(hint: Text("Press to view \(crewMember.astronaut.name)'s profile"))
                                 
                                 VStack(alignment: .leading) {
                                     Text(crewMember.astronaut.name)
@@ -50,18 +56,30 @@ struct MissionView: View {
                                     Text(crewMember.role)
                                         .foregroundColor(.secondary)
                                 }
-                                
+                                .accessibilityElement(children: .ignore)
+                                .accessibility(label: Text("\(crewMember.astronaut.name) is a \(crewMember.role)"))
                                 Spacer()
                             }
                             .padding(.horizontal)
                         }
-                        
                     }
-                    Spacer(minLength: 25)
                 }
             }
+            .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
         }
-        .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
+        
+    }
+    
+    private func calculateScale(_ geo: GeometryProxy, _ geometry: GeometryProxy) -> CGFloat {
+        var offset: CGFloat = 0.0
+        let geoHeight = geometry.size.height
+        let imgMaxY = geo.frame(in: .global).maxY
+        
+        let diff = geoHeight - imgMaxY
+        offset = diff / (geoHeight / 0.5)
+        print("geoHeight: \(geoHeight), imgMaxY: \(imgMaxY), diff: \(diff), offset: \(offset)")
+        
+        return 1.0 - offset
     }
     
     init(mission: Mission, astronauts: [Astronaut], missions: [Mission]) {

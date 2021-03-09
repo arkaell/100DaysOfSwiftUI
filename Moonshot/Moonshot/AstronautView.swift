@@ -20,6 +20,7 @@ struct AstronautView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
+                        .accessibility(label: Text("\(astronaut.name)"))
                     
                     Text(self.astronaut.description)
                         .padding()
@@ -27,14 +28,19 @@ struct AstronautView: View {
                     
                     Text("Missions")
                         .font(.headline)
+                        .accessibility(hidden: true)
+                    
                     List(missions) { mission in
                         HStack {
                             Image(mission.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 44, height: 44)
+
                             Text(mission.displayName)
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibility(label: Text("\(astronaut.name)'s missions"))
                     }
                 }
             }
